@@ -75,7 +75,7 @@ class LoginPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 ),
                 onPressed: () {
-                  // Aksi ketika tombol ditekan
+                  Navigator.pushNamed(context, '/mainmenu');
                 },
                 child: Text(
                   'Login',

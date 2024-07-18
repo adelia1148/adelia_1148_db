@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
             SizedBox(height: 30),
             // Gambar Ibu dengan anaknya di bagian tengah
             Image.asset(
-              'ssets/images/logoku_1.png', // Ganti dengan path gambar Anda
+              'assets/images/logoku_1.png', // Ganti dengan path gambar Anda
               height: 200.0,
             ),
             SizedBox(height: 30),
@@ -51,7 +51,7 @@ class SplashScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
               onPressed: () {
-                // Aksi ketika tombol ditekan
+                Navigator.pushNamed(context, '/register');
               },
               child: Text(
                 'Masuk',

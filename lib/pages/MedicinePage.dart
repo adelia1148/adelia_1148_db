@@ -113,9 +113,21 @@ class MedicinePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildBottomNavBarItem(context, Icons.home, 'Beranda', false),
-            _buildBottomNavBarItem(
-                context, Icons.shopping_cart, 'Belanjaan', false),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context,
+                    '/mainmenu'); // Navigasi ke '/mainmenu' saat icon home diklik
+              },
+              child:
+                  _buildBottomNavBarItem(context, Icons.home, 'Beranda', true),
+            ),
+            GestureDetector(
+              onTap: () {
+                // Tidak melakukan navigasi saat icon cart diklik (menuju '#')
+              },
+              child: _buildBottomNavBarItem(
+                  context, Icons.shopping_cart, 'Belanjaan', false),
+            ),
           ],
         ),
         color: Color(0xFF2BC656),

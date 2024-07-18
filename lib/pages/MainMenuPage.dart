@@ -78,7 +78,7 @@ class MainMenuPage extends StatelessWidget {
                 mainAxisSpacing: 16.0,
                 children: [
                   _buildMenuCard(context, 'Imunisasi',
-                      'assets/images/suntika_1.png', ImmunizationPage()),
+                      'assets/images/suntikan_1.png', ImmunizationPage()),
                   _buildMenuCard(context, 'Obat', 'assets/images/obat_1.png',
                       MedicinePage()),
                   _buildMenuCard(context, 'Riwayat Berobat',
@@ -97,9 +97,21 @@ class MainMenuPage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildBottomNavBarItem(context, Icons.home, 'Beranda', true),
-            _buildBottomNavBarItem(
-                context, Icons.shopping_cart, 'Belanjaan', false),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context,
+                    '/mainmenu'); // Navigasi ke '/mainmenu' saat icon home diklik
+              },
+              child:
+                  _buildBottomNavBarItem(context, Icons.home, 'Beranda', true),
+            ),
+            GestureDetector(
+              onTap: () {
+                // Tidak melakukan navigasi saat icon cart diklik (menuju '#')
+              },
+              child: _buildBottomNavBarItem(
+                  context, Icons.shopping_cart, 'Belanjaan', false),
+            ),
           ],
         ),
         color: Color(0xFF2BC656),
