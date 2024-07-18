@@ -33,6 +33,7 @@ class MainMenuPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Container(
+              height: 70,
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Color(0xFFD9D9D9),
@@ -42,10 +43,9 @@ class MainMenuPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Hallo, Pasien',
+                    'Hallo, Adel',
                     style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
                     ),
                   ),
                   Container(
@@ -67,7 +67,6 @@ class MainMenuPage extends StatelessWidget {
               'Pilih menu yang Anda inginkan:',
               style: TextStyle(
                 fontSize: 18.0,
-                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 20),
@@ -150,14 +149,14 @@ class MainMenuPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(
+              Center(
+                  child: Text(
                 title,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
                 ),
-              ),
+              )),
             ],
           ),
         ),

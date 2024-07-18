@@ -19,11 +19,13 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            Text(
-              'Profil Data Pasien',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+            Center(
+              child: Text(
+                'Profil Data Pasien',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -34,21 +36,22 @@ class ProfilePage extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 45.0,
                   backgroundImage: AssetImage(
-                      'assets/images/profile_1.png'), // Path gambar profil
+                      'assets/images/profile_2.png'), // Path gambar profil
                 ),
               ),
             ),
             SizedBox(height: 20),
-            _buildProfileInfo(context, 'User ID', 'Ubah User ID'),
+            _buildProfileInfo(
+                context, 'User ID : Adelia Putri', 'Ubah User ID'),
             SizedBox(height: 10),
-            _buildProfileInfo(context, 'No. HP', 'Ubah No. HP'),
+            _buildProfileInfo(context, 'No. HP : +62xxx', 'Ubah No. HP'),
             SizedBox(height: 10),
-            _buildProfileInfo(context, 'Password', 'Ubah Password'),
+            _buildProfileInfo(context, 'Password : ******', 'Ubah Password'),
             SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Logika untuk logout
+                  Navigator.pushNamed(context, '/'); // Logika untuk logout
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF2BC656), // Warna tombol

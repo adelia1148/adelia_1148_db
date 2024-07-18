@@ -39,8 +39,18 @@ class HistoryPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Text(
+                'Riwayat Berobat',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             SizedBox(height: 20),
             Container(
+              height: 70,
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Color(0xFFD9D9D9),
@@ -49,64 +59,49 @@ class HistoryPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Riwayat Berobat',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    'Hallo, Adel',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/profile_2.png', // Path icon profil
+                      height: 50.0,
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 50),
             Expanded(
               child: ListView.builder(
                 itemCount: medicalHistoryData.length,
                 itemBuilder: (context, index) {
                   return Stack(
                     children: [
-                      Positioned(
-                        top: 0,
-                        left: 16.0,
-                        right: 16.0,
-                        child: Container(
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF0D8BD1),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Text(
-                            'Riwayat Berobat ${medicalHistoryData[index]['date']}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
                       Container(
-                        margin: EdgeInsets.only(top: 30, bottom: 16.0),
+                        margin: EdgeInsets.only(bottom: 16.0),
                         padding: EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           color: Color(0xFF41A190),
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
+                            SizedBox(height: 30),
                             Text(
                               'Diagnosa: ${medicalHistoryData[index]['diagnosis']}',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 14.0,
                               ),
                             ),
                             SizedBox(height: 8.0),
@@ -126,6 +121,26 @@ class HistoryPage extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF0D8BD1),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Text(
+                            'Riwayat Berobat ${medicalHistoryData[index]['date']}',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ],

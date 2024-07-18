@@ -19,14 +19,16 @@ class RegisterPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             // Judul
-            Text(
-              'Ayo Daftar Dulu!',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            Center(
+              child: Text(
+                'Ayo daftar dulu!',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
             // Form input Nama
@@ -101,7 +103,6 @@ class RegisterPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.blue,
-                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),

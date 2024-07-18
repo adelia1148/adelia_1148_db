@@ -52,6 +52,7 @@ class MedicinePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              height: 70,
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Color(0xFFD9D9D9),
@@ -60,12 +61,41 @@ class MedicinePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Text(
+                    'Hallo, Adel',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/profile_2.png', // Path icon profil
+                      height: 50.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   Image.asset(
                     'assets/images/berobat.png', // Path gambar
-                    height: 50.0,
+                    height: 100.0,
                   ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         'Obat',
@@ -169,32 +199,40 @@ class MedicineCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       color: Color(0xFF41A190),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            image,
-            height: 50.0,
-          ),
-          SizedBox(height: 10),
-          Text(
-            name,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 5),
-          Text(
-            price,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14.0,
-            ),
-          ),
-        ],
-      ),
+      child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                padding: EdgeInsets.all(16.0),
+                child: Image.asset(
+                  image,
+                  height: 50.0,
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Text(
+                name,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                price,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.0,
+                ),
+              )
+            ],
+          )),
     );
   }
 }

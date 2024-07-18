@@ -19,7 +19,8 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             // Judul
-            Text(
+            Center(
+                child: Text(
               'Login',
               style: TextStyle(
                 fontSize: 24.0,
@@ -27,17 +28,18 @@ class LoginPage extends StatelessWidget {
                 color: Colors.black,
               ),
               textAlign: TextAlign.center,
-            ),
+            )),
             SizedBox(height: 10),
             // Teks "Silakan login dengan akun Anda"
-            Text(
+            Center(
+                child: Text(
               'Silakan login dengan akun Anda',
               style: TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               textAlign: TextAlign.center,
-            ),
+            )),
             SizedBox(height: 20),
             // Form input Nama
             TextField(
@@ -99,7 +101,6 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.blue,
-                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),

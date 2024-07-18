@@ -36,6 +36,7 @@ class ImmunizationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              height: 70,
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Color(0xFFD9D9D9),
@@ -45,10 +46,9 @@ class ImmunizationPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Hallo, Pasien',
+                    'Hallo, Adel',
                     style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0,
                     ),
                   ),
                   Container(
@@ -69,7 +69,6 @@ class ImmunizationPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                color: Color(0xFFD9D9D9),
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Row(
@@ -96,7 +95,7 @@ class ImmunizationPage extends StatelessWidget {
                   ),
                   Image.asset(
                     'assets/images/imun_1.png', // Path gambar
-                    height: 50.0,
+                    height: 100.0,
                   ),
                 ],
               ),
@@ -179,50 +178,58 @@ class _ImmunizationCardState extends State<ImmunizationCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      color: Color(0xFF41A190),
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      child: ListTile(
-        contentPadding: EdgeInsets.all(16.0),
-        leading: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.title,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              widget.description,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14.0,
-              ),
-            ),
-          ],
+    return Container(
+      height: 120,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
         ),
-        trailing: GestureDetector(
-          onTap: () {
-            setState(() {
-              isSelected = !isSelected;
-            });
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
+        color: Color(0xFF41A190),
+        margin: EdgeInsets.symmetric(vertical: 10.0),
+        child: ListTile(
+          contentPadding: EdgeInsets.all(16.0),
+          leading: Container(
+            width:
+                350, // Sesuaikan ukuran agar tidak mengonsumsi seluruh lebar tile
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  widget.title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  widget.description,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14.0,
+                  ),
+                ),
+              ],
             ),
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              isSelected ? Icons.check : null,
-              color: Colors.green,
+          ),
+          trailing: GestureDetector(
+            onTap: () {
+              setState(() {
+                isSelected = !isSelected;
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                isSelected ? Icons.check : null,
+                color: Colors.green,
+              ),
             ),
           ),
         ),
